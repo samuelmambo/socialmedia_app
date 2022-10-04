@@ -7,7 +7,7 @@ function errorHandler (req,res,next ){
         return res.status(400).json({message:err.message});
     }
 
-    if(typeof err ==="UnauthorizedError"){
+    if(typeof err ==="Unauthorized Error"){
         return res.status(401).json({message:err.message});
     }
 

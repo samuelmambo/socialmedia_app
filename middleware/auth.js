@@ -4,7 +4,7 @@ function authenticateToken(req,res,next){
     const authHeader = req.headers['authorization'];
     const token = authHeader && authHeader.split(' ')[1];
 
-    if(token == null)return res.semdStatus(401);
+    if(token == null)return res.sendStatus(401);
 
     jwt.verify(token,"snippet_SecretKEY", (err,user) => {
         if(err) return res.semdStatus(403);
@@ -19,5 +19,5 @@ function generateAcessToken(username){
 }
  module.exports ={
     authenticateToken,
-    generateAcessToken, 
+    generateAcessToken 
  }
